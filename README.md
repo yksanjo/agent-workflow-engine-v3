@@ -1,62 +1,84 @@
-# Agent Workflow Engine
+# agent-workflow-engine-v3
 
-A workflow execution engine built on the Hierarchical Agent Coordinator, specializing in workflow definitions, state machines, and task pipelines.
+## Detailed Description
 
-## Features
+agent-workflow-engine-v3 is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- **Workflow Definitions**: Create reusable workflow templates with dependencies
-- **Workflow Execution**: Execute workflows with state tracking (PENDING, RUNNING, PAUSED, COMPLETED, FAILED, CANCELLED)
-- **Pipeline Processing**: Sequential and parallel pipeline execution
-- **Streaming Pipeline**: Process data streams through handler chains
-- **Integration**: Built on top of the Hierarchical Agent Coordinator
+## Problem Statement
 
-## Installation
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-pip install -e .
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
 ## Usage
 
-```python
-from agent_workflow_engine import (
-    HierarchicalCoordinator,
-    WorkflowDefinition,
-    WorkflowStep,
-    WorkflowExecutor,
-    PipelineExecutor,
-)
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-# Create coordinator
-coordinator = HierarchicalCoordinator()
+## Quality Standards
 
-# Create workflow
-workflow = WorkflowDefinition(
-    name="Data Processing Pipeline",
-    description="Process and analyze data"
-)
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-workflow.add_step(WorkflowStep(
-    step_id="extract",
-    name="Extract Data",
-    description="Extract data from source",
-    agent_config={"capabilities": ["data_processing"]}
-))
+## Security
 
-workflow.add_step(WorkflowStep(
-    step_id="transform",
-    name="Transform Data",
-    description="Transform data",
-    agent_config={"capabilities": ["data_processing"]},
-    dependencies=["extract"]
-))
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-# Execute workflow
-executor = WorkflowExecutor(coordinator)
-execution = executor.create_execution(workflow)
-result = executor.execute(execution.execution_id)
-```
+## Contributing
+
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
