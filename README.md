@@ -1,5 +1,12 @@
 # agent-workflow-engine-v3
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/agent-workflow-engine-v3/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/agent-workflow-engine-v3/actions)
+![License](https://img.shields.io/github/license/yksanjo/agent-workflow-engine-v3)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/agent-workflow-engine-v3)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/agent-workflow-engine-v3)
+
 ## Detailed Description
 
 agent-workflow-engine-v3 is maintained as an industry-grade software project with production-ready engineering practices.  
